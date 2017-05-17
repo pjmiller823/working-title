@@ -31,9 +31,13 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    margin-bottom: 3m;
-    font-size: 200%;
+@media screen and (max-width: 600px) {
+  .landing {
+    .jumbotron {
+      h1 {
+        margin-bottom: 3m;
+        font-size: 400%;
+      }
+    }
   }
 }

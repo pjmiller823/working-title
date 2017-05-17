@@ -1,0 +1,26 @@
+.profile-header {
+
+  h1 {
+    font-size: 400%;
+   }
+}
+
+.profile-jumbotron {
+  background-color: $accent-color;
+}
+
+.btn-profile {
+  background-color: $light-accent
+}
+
+.notifications {
+  background-color: $accent-color;
+
+  span {
+    font-size: 200%;
+  }
+
+  .list-group-item {
+    background-color: $background-color
+  }
+}
