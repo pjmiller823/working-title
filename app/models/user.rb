@@ -8,6 +8,7 @@ class User < ApplicationRecord
     user.name         = authentication_data.info.name
     user.nickname     = authentication_data.info.nickname
     user.access_token = authentication_data.info.access_token
+    user.email        = authentication_data.info.email
 
     user.save!
 
