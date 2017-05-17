@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   # user routes
   get '/profile' => 'user#show'
+
+  # group routes
+  get  '/new'    => 'group#new'
+  post '/create' => 'group#create'
 end
