@@ -30,6 +30,11 @@ html
           ul.nav.navbar-nav
             li.active
               = link_to "Home", "#"
+          .navbar-right
+            #navbar.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li.active
+                  = link_to "Logout", logout_path
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
