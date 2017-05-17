@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :users
+  
   def self.from_omniauth(authentication_data)
     user = User.where(provider: authentication_data['provider'],
                       uid: authentication_data['uid']).first_or_create
@@ -16,4 +18,5 @@ class User < ApplicationRecord
 
     return user
   end
+
 end
