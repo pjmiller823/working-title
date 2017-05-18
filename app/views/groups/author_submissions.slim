@@ -19,6 +19,6 @@
     - if @user.submissions.empty?
       h4 #{@user.name} has not made any submissions
     - else
-      - @user.submissions.each do |submission|
+      - @user.submissions.each_with_index do |submission, index|
         .list-group
-          = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
+          = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago.", membership_submission_path(@membership, submission), class: "list-group-item"

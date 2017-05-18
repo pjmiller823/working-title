@@ -6,7 +6,9 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/1
   def show
-    @submission = Submission.find(params[:id])
+    @membership = Membership.find(params[:membership_id])
+
+    @submission = @membership.submissions.find(params[:id])
   end
 
   # GET /submissions/new
