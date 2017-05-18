@@ -10,6 +10,8 @@ end
 gem 'shrine'
 gem 'shrine-sql'
 gem 'roda'
+gem "image_processing"
+gem "mini_magick", ">= 4.3.5"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 # Use postgresql as the database for Active Record
