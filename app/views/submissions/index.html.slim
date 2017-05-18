@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_submission_path, class: 'btn btn-primary' do
+    span.glyphicon.glyphicon-plus
+    | New Submission
+  h1 Listing submissions
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th Intro
+        th Body
+        th colspan=3
+    tbody.table-body
+      - @submissions.each do | submission |
+        tr
+          td= submission.intro
+          td= submission.body
+          td= link_to submission do
+            span.glyphicon.glyphicon-ok
+          td= link_to edit_submission_path(submission)
+            span.glyphicon.glyphicon-pencil
+          td= link_to submission, method: :delete, data: { confirm: 'Are you sure?' }
+            span.glyphicon.glyphicon-remove

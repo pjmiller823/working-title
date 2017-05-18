@@ -1,0 +1,13 @@
+.page-header
+  = link_to submissions_path, class: 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_submission_path(@submission), class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1 Show submission
+dl.dl-horizontal
+  dt Intro:
+  dd = @submission.intro
+  dt Body:
+  dd = @submission.body

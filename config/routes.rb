@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :submissions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'session#new'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   # group routes
   resources :groups, except: [:index, :destroy] do
     member do
-      get '/author/:author_id' => 'groups#author_submissions', as: :author_submissions
+      get '/submissions/:author_id' => 'groups#author_submissions', as: :author_submissions
     end
   end
 
