@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   # group routes
   get  '/new'    => 'group#new'
   post '/create' => 'group#create'
+  get  '/group'  => 'group#show'
 end

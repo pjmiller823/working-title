@@ -15,7 +15,7 @@ class GroupController < ApplicationController
   end
 
   def show
-
+    @group = Group.find(params[:id])
   end
 
   private
