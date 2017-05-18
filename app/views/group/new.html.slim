@@ -1,4 +1,8 @@
-= form_for @group, url: { action: "create"} do |f| 
-    = f.label :name
-    = f.text_field :name, placeholder: "Group Name"
-    = f.submit "Create Group" 
+container
+  .jumbotron.row.form-jumbotron
+    .col-xs-8
+      = form_for @group, url: { action: "create"} do |f| 
+        .form-group
+          .col-xs-10
+            = f.text_field :name, placeholder: "Group Name", class: "form-control"
+            = f.submit "Create Group", class: "btn btn-default form-btn"

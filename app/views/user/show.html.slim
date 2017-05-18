@@ -15,10 +15,11 @@
 
   .container
     .jumbotron.profile-jumbotron
-      h2 Your Groups!
-      ul.group-list
-        - @user.groups.each do | group |
-          = link_to "#{group.name}", class: "group-name"
+      h2 Your Groups:
+      - @user.groups.each do | group |
+        ul.group-list
+          li
+            = link_to "#{group.name}", class: "group-name"
       span
         = link_to "Create Another Group!", new_path, method: "get", class: "btn btn-default btn-profile"
         
