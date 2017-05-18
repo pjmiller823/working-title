@@ -20,7 +20,9 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/1/edit
   def edit
-    @submission = Submission.find(params[:id])
+    @membership = Membership.find(params[:membership_id])
+
+    @submission = @membership.submissions.find(params[:id])
   end
 
   # POST /submissions
@@ -37,9 +39,11 @@ class SubmissionsController < ApplicationController
 
   # PATCH/PUT /submissions/1
   def update
-    @submission = Submission.find(params[:id])
+    @membership = Membership.find(params[:membership_id])
+
+    @submission = @membership.submissions.find(params[:id])
     if @submission.update(submission_params)
-      redirect_to @submission, notice: 'Submission was successfully updated.'
+      redirect_to author_submissions_group_path(@membership.group, @membership.user), notice: 'Submission was successfully updated.'
     else
       render :edit
     end
