@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :groups, through: :memberships
   has_many :memberships
 
+  include ImageUploader[:image]
+
   def self.from_omniauth(authentication_data)
     user = User.where(provider: authentication_data['provider'],
                       uid: authentication_data['uid']).first_or_create
