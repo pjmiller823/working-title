@@ -22,6 +22,8 @@ class GroupController < ApplicationController
     @group_params = params[:groupid]
     @user_params = params[:userid]
     @author_show = User.where("user_id = :user_params and group_id = :group_params", user_params: @user_params, group_params: @group_params)
+    @group = Group.find(params[:groupid])
+    @user = User.find(params[:userid])
   end
 
   private

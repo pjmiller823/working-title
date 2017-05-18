@@ -1,0 +1,19 @@
+.author-container {
+  align-items: center;
+
+  .jumbotron {
+    background-color: $accent-color;
+
+    .list-group-item {
+      background-color: $background-color;
+    }
+
+  }
+  .btn {
+    background-color: $light-accent;
+  }
+
+  .author-btn {
+    margin: 1.5em;
+  }
+}
