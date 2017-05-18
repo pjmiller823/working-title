@@ -1,15 +1,15 @@
 .page-header.profile-header
   h1.text-center #{@group.name}
-- @group.users.each do |user|
+- @authors.each do |author|
   .row.group-authors-ros
     .col-sm-2.col-md-2
       .thumbnail
-        - if user.image_url(:thumbnail)
-          = image_tag(user.image_data(:thumbnail))
+        - if author.image_url(:thumbnail)
+          = image_tag(author.image_data(:thumbnail))
         - else
           img src="https://unsplash.it/85/85" width="85" height="85"
         .caption.text-center
-          = link_to "#{user.name}", author_path(userid: user.id, groupid: @group.id)
+          = link_to "#{author.name}", author_submissions_group_path(@group, author)
 
 .container.group-container
   .col-lg-offset-5

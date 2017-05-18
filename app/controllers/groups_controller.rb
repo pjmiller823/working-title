@@ -1,4 +1,4 @@
-class GroupController < ApplicationController
+class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
@@ -16,14 +16,12 @@ class GroupController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @authors = @group.users
   end
 
-  def author_show
-    @group_params = params[:groupid]
-    @user_params = params[:userid]
-    @author_show = User.where("user_id = :user_params and group_id = :group_params", user_params: @user_params, group_params: @group_params)
-    @group = Group.find(params[:groupid])
-    @user = User.find(params[:userid])
+  def author_submissions
+    @group = Group.find(params[:id])
+    @user = @group.users.find(params[:author_id])
   end
 
   private

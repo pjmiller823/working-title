@@ -21,7 +21,7 @@
           li
             = link_to "#{group.name}", group_path(id: group.id), class: "group-name"
       span
-        = link_to "Create Another Group!", new_path, method: "get", class: "btn btn-default btn-profile"
+        = link_to "Create Another Group!", new_group_path, method: "get", class: "btn btn-default btn-profile"
         
     .jumbotron.notifications
       span Notifications and To Do:

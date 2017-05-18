@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   get '/profile' => 'user#show'
 
   # group routes
-  get  '/new'    => 'group#new'
-  post '/create' => 'group#create'
-  get  '/group'  => 'group#show'
-  get  '/author' => 'group#author_show'
+  resources :groups, except: [:index, :destroy] do
+    member do
+      get '/author/:author_id' => 'groups#author_submissions', as: :author_submissions
+    end
+  end
 
   mount Shrine::DownloadEndpoint => "/attachments"
 end

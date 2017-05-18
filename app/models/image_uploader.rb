@@ -13,9 +13,9 @@ class ImageUploader < Shrine
 
     size_800 = resize_and_pad(original, 800, 800) { |cmd| cmd.auto_orient } # orient rotated images
     size_500 = resize_and_pad(size_800,  400, 500)
-    size_300 = resize_and_pad(size_500,  200, 250)
+    size_200 = resize_and_pad(size_500,  200, 200)
     thumbnail = resize_and_pad(size_300, 85, 85)
 
-    { original: io, large: size_800, medium: size_500, small: size_300 , thumbnail: thumbnail}
+    { original: io, large: size_800, medium: size_500, small: size_200 , thumbnail: thumbnail}
   end
 end
