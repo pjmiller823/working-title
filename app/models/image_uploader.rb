@@ -16,6 +16,6 @@ class ImageUploader < Shrine
     size_300 = resize_and_pad(size_500,  200, 250)
     thumbnail = resize_and_pad(size_300, 85, 85)
 
-    { original: io, large: size_800, medium: size_500, small: size_300 }
+    { original: io, large: size_800, medium: size_500, small: size_300 , thumbnail: thumbnail}
   end
 end

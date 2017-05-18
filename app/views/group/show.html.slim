@@ -1,40 +1,19 @@
 .page-header.profile-header
   h1.text-center #{@group.name}
-.row.group-authors-ros
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85" width="85" height="85"
-      .caption.text-center
-        = link_to "Author Name"
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85" width="85" height="85"
-      .caption.text-center
-        = link_to "Author Name"
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85" width="85" height="85"
-      .caption.text-center
-        = link_to "Author Name"
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85" width="85" height="85"
-      .caption.text-center
-        = link_to "Author Name"
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85" width="85" height="85"
-      .caption.text-center
-        = link_to "Author Name"
-  .col-sm-2.col-md-2
-    .thumbnail
-      img src="https://unsplash.it/85/85"
-      .caption.text-center
-        = link_to "Author Name"
+- @group.users.each do |user|
+  .row.group-authors-ros
+    .col-sm-2.col-md-2
+      .thumbnail
+        - if user.image_url(:thumbnail)
+          = image_tag(user.image_data(:thumbnail))
+        - else
+          img src="https://unsplash.it/85/85" width="85" height="85"
+        .caption.text-center
+          = link_to "#{user.name}", author_path(userid: user.id, groupid: @group.id)
 
 .container.group-container
   .col-lg-offset-5
-    .btn.btn-default.btn-lg Invite an Author
+    .btn.btn-default.btn-lg.author-invite Invite an Author
   .jumbotron.group-recent-subs
     h2 Recent Submissions
     .list-group

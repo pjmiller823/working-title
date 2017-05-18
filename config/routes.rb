@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get  '/new'    => 'group#new'
   post '/create' => 'group#create'
   get  '/group'  => 'group#show'
+  get  '/author' => 'group#author_show'
 
   mount Shrine::DownloadEndpoint => "/attachments"
 end

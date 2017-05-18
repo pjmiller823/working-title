@@ -18,6 +18,12 @@ class GroupController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def author_show
+    @group_params = params[:groupid]
+    @user_params = params[:userid]
+    @author_show = User.where("user_id = :user_params and group_id = :group_params", user_params: @user_params, group_params: @group_params)
+  end
+
   private
   def group_params
     params.require(:group).permit(:name)

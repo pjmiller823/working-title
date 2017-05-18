@@ -1,0 +1,21 @@
+.thumbnail .caption a {
+  text-decoration: none;
+}
+
+.group-container {
+  align-content: center;
+  margin-bottom: 2em;
+
+  .jumbotron {
+    margin-top: 2em;
+    background-color: $accent-color;
+
+    .list-group-item {
+      background-color: $background-color
+    }
+  }
+  .author-invite {
+    background-color: $light-accent;
+    margin-bottom: 2em;
+    }
+}
