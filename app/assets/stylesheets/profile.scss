@@ -7,6 +7,14 @@
 
 .profile-jumbotron {
   background-color: $accent-color;
+
+  .group-list {
+    a {
+      font-size: 150%;
+      color: #212121;
+      text-decoration: none;
+    }
+  }
 }
 
 .btn-profile {

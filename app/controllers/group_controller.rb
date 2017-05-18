@@ -2,9 +2,13 @@ class GroupController < ApplicationController
   def new
     @group = Group.new
   end
-  
+
   def create
     @group = Group.new(group_params)
+  end
+
+  def show
+
   end
 
   private
