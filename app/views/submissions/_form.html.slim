@@ -1,4 +1,4 @@
-= form_for(@submission, html: { class: "form-horizontal", role: "form" }) do |f|
+= form_for([@membership, @submission], html: { class: "form-horizontal", role: "form" }) do |f|
   - if @submission.errors.any?
     .alert.alert-danger.alert-dismissable role="alert"
       button.close type="button" data-dismiss="alert"

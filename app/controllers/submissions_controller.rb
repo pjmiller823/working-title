@@ -11,7 +11,9 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @submission = Submission.new
+    @membership = Membership.find(params[:membership_id])
+
+    @submission = @membership.submissions.new
   end
 
   # GET /submissions/1/edit
@@ -21,10 +23,11 @@ class SubmissionsController < ApplicationController
 
   # POST /submissions
   def create
-    @submission = Submission.new(submission_params)
+    @membership = Membership.find(params[:membership_id])
+    @submission = @membership.submissions.new(submission_params)
 
     if @submission.save
-      redirect_to @submission, notice: 'Submission was successfully created.'
+      redirect_to author_submissions_group_path(@membership.group, @membership.user), notice: 'Submission was successfully created.'
     else
       render :new
     end

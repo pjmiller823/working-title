@@ -12,16 +12,13 @@
   .author-btn.text-center
     = link_to "Current Submission", "#", class: "btn btn-default"
   .author-btn.text-center
-    = link_to "Create New Submission", new_submission_path, class: "btn btn-default"
+    = link_to "Create New Submission", new_membership_submission_path(@membership), class: "btn btn-default"
   
   .jumbotron.author-past-subs
     h2 Past Submissions
-    .list-group
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
-      = link_to "Cras justo odio", "http://google.com", class: "list-group-item"
+    - if @user.submissions.empty?
+      h4 #{@user.name} has not made any submissions
+    - else
+      - @user.submissions.each do |submission|
+        .list-group
+          = link_to "Cras justo odio", "http://google.com", class: "list-group-item"

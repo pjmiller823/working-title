@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :submissions
+  resources :memberships do
+    resources :submissions, except: [:index]
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'session#new'
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
   get '/logout' => 'session#destroy'
 
   # user routes
-  get '/profile' => 'user#show'
+  get '/profile' => 'users#show'
 
   # group routes
   resources :groups, except: [:index, :destroy] do

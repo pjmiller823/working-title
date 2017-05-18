@@ -21,7 +21,8 @@ class GroupsController < ApplicationController
 
   def author_submissions
     @group = Group.find(params[:id])
-    @user = @group.users.find(params[:author_id])
+    @membership = @group.memberships.find_by(user_id: params[:author_id])
+    @user = @membership.user
   end
 
   private
