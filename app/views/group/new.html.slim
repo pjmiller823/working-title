@@ -1,8 +1,18 @@
 container
-  .jumbotron.row.form-jumbotron
-    .col-xs-8
-      = form_for @group, url: { action: "create"} do |f| 
-        .form-group
-          .col-xs-10
-            = f.text_field :name, placeholder: "Group Name", class: "form-control"
-            = f.submit "Create Group", class: "btn btn-default form-btn"
+  .row
+    .col-xs-10
+      .jumbotron.row.form-jumbotron
+        h2.text-center Creating a group:
+        p Congratulations! You are one step closer to hosting your very own writing group on Working Title. A couple of things to know first:
+        ul.create-group-list
+          li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .col-xs-10
+          = form_for @group, url: { action: "create"} do |f| 
+            .form-group
+              .col-xs-10
+                = f.text_field :name, placeholder: "Group Name", class: "form-control"
+                = f.submit "Create Group", class: "btn btn-default form-btn"
