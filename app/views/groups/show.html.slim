@@ -16,7 +16,7 @@
     .btn.btn-default.btn-lg.author-invite Invite an Author
   .jumbotron.group-recent-subs
     h2 Recent Submissions
-    - @group.submissions.each_with_index do |submission, index|
+    - @submissions.each_with_index do |submission, index|
       .list-group
         = link_to "Submssion # #{index + 1} , posted #{time_ago_in_words(submission.created_at)} ago. Submitted by #{submission.membership.user.name}", membership_submission_path(submission.membership, submission), class: "list-group-item"
   .jumbotron.group-forum

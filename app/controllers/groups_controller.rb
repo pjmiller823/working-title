@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @authors = @group.users
+    @submissions = @group.submissions.order(created_at: :desc)
   end
 
   def author_submissions

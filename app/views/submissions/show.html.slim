@@ -1,13 +1,13 @@
 .page-header
-  = link_to membership_submissions_path, class: 'btn btn-default' do 
-    span.glyphicon.glyphicon-list-alt
-    |  Back 
-  = link_to edit_membership_submission_path(@membership, @submission), class: 'btn btn-primary' do 
-    span.glyphicon.glyphicon-pencil
-    |  Edit 
-  h1 Show submission
-dl.dl-horizontal
-  dt Intro:
-  dd = @submission.intro
-  dt Body:
-  dd = raw(@submission.body)
+  = link_to "Back to #{@submission.membership.user.name}'s page", author_submissions_group_path(@membership.group, @membership.user), class: 'btn btn-default sub-show-btn' 
+  -if current_user == @membership.user
+    = link_to edit_membership_submission_path(@membership, @submission), class: 'btn btn-primary sub-show-btn' do 
+      |  Edit 
+  h1 #{@submission.membership.user.name}'s Submission
+dl.dl-horizontal.sub-show
+  .well
+    dt.title Intro:
+    dd = @submission.intro
+  .well
+    dt.title Submission:
+    dd = raw(@submission.body)

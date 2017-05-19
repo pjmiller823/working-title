@@ -1,0 +1,18 @@
+.sub-show {
+  font-family: 'Space Mono', monospace;
+
+  .title {
+    font-size: 130%;
+  }
+
+  .well {
+    background-color: $accent_color;
+  }
+}
+
+.sub-show-btn {
+  background-color: $light-accent;
+  color: #212121;
+  border: none;
+
+}
