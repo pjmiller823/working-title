@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# trix
+gem 'trix'
+
 # Shrine image uploading
 gem 'shrine'
 gem 'shrine-sql'

@@ -23,6 +23,9 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @membership = @group.memberships.find_by(user_id: params[:author_id])
     @user = @membership.user
+
+    @submissions = @membership.submissions.order(created_at: :desc)
+    @most_recent_submission = @submissions.first
   end
 
   private

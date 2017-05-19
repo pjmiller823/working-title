@@ -9,16 +9,17 @@
     h2 About the Story
     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     
-  .author-btn.text-center
-    = link_to "Current Submission", "#", class: "btn btn-default"
+  - if @most_recent_submission
+    .author-btn.text-center
+      = link_to "Most Recent Submission", membership_submission_path(@membership, @most_recent_submission), class: "btn btn-default"
   .author-btn.text-center
     = link_to "Create New Submission", new_membership_submission_path(@membership), class: "btn btn-default"
   
   .jumbotron.author-past-subs
     h2 Past Submissions
-    - if @user.submissions.empty?
+    - if @submissions.empty?
       h4 #{@user.name} has not made any submissions
     - else
-      - @user.submissions.each_with_index do |submission, index|
+      - @submissions.each_with_index do |submission, index|
         .list-group
           = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago.", membership_submission_path(@membership, submission), class: "list-group-item"
