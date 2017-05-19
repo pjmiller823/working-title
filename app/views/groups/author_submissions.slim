@@ -1,13 +1,13 @@
-.container.author-container
-  .row
-    .col-xs-12
-      .col-xs-offset-5
-        img src="https://unsplash.it/200/200." class="img-circle"
+.container.author-container.text-center
+  img src="https://unsplash.it/200/200." class="img-circle"
+  
   h1.author-title.text-center #{@user.name}
+  
+  = link_to "Back to #{@group.name}", group_path(@group), class: "btn btn-default back-to-group"
   
   .jumbotron.author-jumbo
     h2 About the Story
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    p.text-left Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     
   - if @most_recent_submission
     .author-btn.text-center
@@ -21,5 +21,5 @@
       h4 #{@user.name} has not made any submissions
     - else
       - @submissions.each_with_index do |submission, index|
-        .list-group
+        .list-group.text-left
           = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago.", membership_submission_path(@membership, submission), class: "list-group-item"
