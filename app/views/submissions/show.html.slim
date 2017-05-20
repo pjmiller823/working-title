@@ -11,3 +11,9 @@ dl.dl-horizontal.sub-show
   .well
     dt.title Submission:
     dd = raw(@submission.body)
+    
+= link_to "Comment", new_membership_submission_comment_path(@membership, @submission), class: 'btn btn-default sub-show-btn'
+
+= render @submission.comments
+
+= render 'comments/form'

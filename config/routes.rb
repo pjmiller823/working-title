@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :memberships do
-    resources :submissions, except: [:index]
+    resources :submissions, except: [:index] do
+      resources :comments, except: [:index]
+    end
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
