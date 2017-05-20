@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  before_action :authenticate!
   # GET /submissions
   def index
     @submissions = Submission.all

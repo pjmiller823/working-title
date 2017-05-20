@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate!
+
   def new
     @group = Group.new
   end

@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate!
+
   # GET /comments
   def index
     @comments = Comment.all
@@ -12,6 +14,8 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @submission = @comment.submission
+    @comment.submission_id = @submission.submission_id
   end
 
   # GET /comments/1/edit
@@ -51,6 +55,6 @@ class CommentsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def comment_params
-    params.require(:comment).permit(:submission_id, :body)
+    params.require(:comment).permit(:body)
   end
 end
