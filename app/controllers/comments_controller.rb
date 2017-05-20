@@ -25,7 +25,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    @submission = Submission.find(params[:submission_id])
+    @comment = @submission.comments.create(comment_params)
+    @comment.save
+    redirect_to membership_submission_path
 
     if @comment.save
       redirect_to @comment, notice: 'Comment was successfully created.'
