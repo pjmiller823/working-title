@@ -27,11 +27,9 @@ class CommentsController < ApplicationController
   def create
     @submission = Submission.find(params[:submission_id])
     @comment = @submission.comments.create(comment_params)
-    @comment.save
-    redirect_to membership_submission_path
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to membership_submission_path(@submission.membership.id, @submission.id), notice: 'Comment was successfully created.'
     else
       render :new
     end
@@ -41,7 +39,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+      redirect_to membership_submission_path, notice: 'Comment was successfully updated.'
     else
       render :edit
     end

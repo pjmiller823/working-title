@@ -10,7 +10,8 @@ class SubmissionsController < ApplicationController
     @membership = Membership.find(params[:membership_id])
 
     @submission = @membership.submissions.find(params[:id])
-    @comment = @submission.comments.create
+    @comment = @submission.comments.new
+    @comments = @submission.comments
   end
 
   # GET /submissions/new
