@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   def create
     @submission = Submission.find(params[:submission_id])
     @comment = @submission.comments.create(comment_params)
-    @comment.created_by_id = current_user
+    @comment.created_by_id = current_user.id
 
     if @comment.save
       redirect_to membership_submission_path(@submission.membership.id, @submission.id), notice: 'Comment was successfully created.'
