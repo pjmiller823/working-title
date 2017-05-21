@@ -22,4 +22,4 @@
     - else
       - @submissions.each_with_index do |submission, index|
         .list-group.text-left
-          = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago.", membership_submission_path(@membership, submission), class: "list-group-item"
+          = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments.", membership_submission_path(@membership, submission), class: "list-group-item"

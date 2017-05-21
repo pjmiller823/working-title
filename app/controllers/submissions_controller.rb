@@ -11,7 +11,7 @@ class SubmissionsController < ApplicationController
 
     @submission = @membership.submissions.find(params[:id])
     @comment = @submission.comments.new
-    @comments = @submission.comments
+    @comments = @submission.comments.order(created_at: :desc)
   end
 
   # GET /submissions/new

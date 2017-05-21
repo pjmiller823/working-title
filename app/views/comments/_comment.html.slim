@@ -1,3 +1,4 @@
-dl.dl-horizontal
-  dt Body:
-  dd = raw(comment.body)
+.well.comment-well
+  dl.dl-horizontal
+    dt #{comment.submission.membership.user.name}:
+    dd = raw(comment.body)

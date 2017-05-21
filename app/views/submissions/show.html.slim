@@ -11,6 +11,8 @@ dl.dl-horizontal.sub-show
   .well
     dt.title Submission:
     dd = raw(@submission.body)
+
+h2 Comments:
 - @comments.each do |comment|   
   = render 'comments/comment', comment: comment
 

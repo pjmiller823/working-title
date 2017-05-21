@@ -8,7 +8,7 @@
         p Inside your group page you will be able to submit sections of your current project, set a due date for your critiques, and view the submissions of your fellow group members. You will also be able to view the Author Profiles of each individual writer and reread any past work they have submitted while in your group. 
         p Well? What are you waiting for? Click the button and get to work!
         
-        = link_to "Create A Group!", new_path, method: "get", class: "btn btn-default btn-profile"
+        = link_to "Create A Group!", new_group_path, method: "get", class: "btn btn-default btn-profile"
 - else
   .page-header.profile-header
     h1.text-center #{@user.name}
