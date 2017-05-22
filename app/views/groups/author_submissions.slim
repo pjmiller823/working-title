@@ -12,9 +12,10 @@
   - if @most_recent_submission
     .author-btn.text-center
       = link_to "Most Recent Submission", membership_submission_path(@membership, @most_recent_submission), class: "btn btn-default"
-  .author-btn.text-center
-    = link_to "Create New Submission", new_membership_submission_path(@membership), class: "btn btn-default"
-  
+  - if @user == current_user
+    .author-btn.text-center
+      = link_to "Create New Submission", new_membership_submission_path(@membership), class: "btn btn-default"
+    
   .jumbotron.author-past-subs
     h2 Past Submissions
     - if @submissions.empty?

@@ -1,7 +1,7 @@
 .page-header.profile-header
   h1.text-center #{@group.name}
-- @authors.each do |author|
-  .row.group-authors-ros
+.row.group-authors-ros
+  - @authors.each do |author|
     .col-sm-2.col-md-2
       .thumbnail
         - if author.image_url(:thumbnail)
@@ -16,8 +16,7 @@
     .col-xs-1-12
       = form_for @invite do |f| 
         = f.hidden_field :group_id, value: @group.id
-        = f.label :email 
-        = f.email_field :email, class: "imput-lg" 
+        = f.email_field :email, placeholder: "Email", class: "imput-lg" 
         = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"
 
     
