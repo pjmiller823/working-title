@@ -12,14 +12,13 @@
           = link_to "#{author.name}", author_submissions_group_path(@group, author)
 
 .container.group-container
-  .col-lg-offset-5
-    .btn.btn-default.btn-lg.author-invite Invite an Author
-    
-    = form_for @invite do |f| 
-      = f.hidden_field :group_id, value: @group.id
-      = f.label :email 
-      = f.email_field :email 
-      = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"
+  .row.text-center
+    .col-xs-1-12
+      = form_for @invite do |f| 
+        = f.hidden_field :group_id, value: @group.id
+        = f.label :email 
+        = f.email_field :email, class: "imput-lg" 
+        = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"
 
     
   .jumbotron.group-recent-subs
