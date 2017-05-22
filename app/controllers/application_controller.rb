@@ -1,4 +1,11 @@
 class ApplicationController < ActionController::Base
+  force_ssl if: :ssl_configured?
+
+  protected
+
+  def ssl_configured?
+    Rails.env.production?
+  end
   protect_from_forgery with: :exception
 
   def current_user=(user)
