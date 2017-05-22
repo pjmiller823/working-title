@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :invites
+  resources :invites, only: [:new, :create] do
+    collection do
+      get "/accept/:token", action: :accept, as: :accept
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

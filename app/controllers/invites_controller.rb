@@ -1,17 +1,18 @@
 class InvitesController < ApplicationController
-  before_create :generate_token
-
-  def generate_token
-    self.token = Digest::SHA1.hexdigest([self.group_id, Time.now, rand].join)
-  end
+  before_action :authenticate!, except: [:accept]
 
   def create
     @invite = Invite.new(invite_params) # Make a new Invite
-    @invite.sender_id = current_user.id # set the sender to the current user
+    @invite.sender = current_user # set the sender to the current user
+
     if @invite.save
-      WorkingtitleMailer.new_user_invite(@invite, login_path(invite_token: @invite.token)).deliver # send the invite data to our mailer to deliver the email
+      WorkingtitleMailer.new_user_invite(@invite, accept_invite_url(token: @invite.token)).deliver # send the invite data to our mailer to deliver the email
     else
       # oh no, creating an new invitation failed
     end
+  end
+
+  def accept
+    @invite = Invite.find_by(token: params[:token])
   end
 end
