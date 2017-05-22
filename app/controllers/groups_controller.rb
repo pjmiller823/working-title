@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @authors = @group.users
     @submissions = @group.submissions.order(created_at: :desc)
+    @invite = Invite.new
   end
 
   def author_submissions
