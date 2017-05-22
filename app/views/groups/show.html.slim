@@ -15,11 +15,11 @@
   .col-lg-offset-5
     .btn.btn-default.btn-lg.author-invite Invite an Author
     
-    = form_for @invite, :url => invites_path do |f| 
-      = f.hidden_field :group_id, :value => @invite.group_id 
+    = form_for @invite do |f| 
+      = f.hidden_field :group_id, value: @group.id
       = f.label :email 
       = f.email_field :email 
-      = f.submit 'Invite an Author', class: "btn btn-default btn-lg author-invite"
+      = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"
 
     
   .jumbotron.group-recent-subs
