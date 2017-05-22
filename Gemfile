@@ -34,6 +34,8 @@ gem 'omniauth-google-oauth2', '~> 0.4.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'sendgrid-ruby'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
