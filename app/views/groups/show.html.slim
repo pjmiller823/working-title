@@ -14,6 +14,14 @@
 .container.group-container
   .col-lg-offset-5
     .btn.btn-default.btn-lg.author-invite Invite an Author
+    
+    = form_for @invite, :url => invites_path do |f| 
+      = f.hidden_field :group_id, :value => @invite.group_id 
+      = f.label :email 
+      = f.email_field :email 
+      = f.submit 'Invite an Author', class: "btn btn-default btn-lg author-invite"
+
+    
   .jumbotron.group-recent-subs
     h2 Recent Submissions
     - @submissions.each_with_index do |submission, index|
