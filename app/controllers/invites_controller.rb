@@ -9,7 +9,6 @@ class InvitesController < ApplicationController
       WorkingtitleMailer.new_user_invite(@invite, accept_invites_url(token: @invite.token)).deliver # send the invite data to our mailer to deliver the email
       redirect_to @invite.group, notice: "Sent the email to #{@invite.email}"
     else
-      # oh no, creating an new invitation failed
       redirect_to @invite.group, notice: "Failed to send email to #{@invite.email}, because: #{@invite.errors.full_messages}"
     end
   end
