@@ -17,4 +17,8 @@ class WorkingtitleMailer < ApplicationMailer
       to: "notifications@example.com",
       bcc: @users.map(&:email)
   end
+
+  def comment_on_submisison(comment)
+    @comment = comment
+  end
 end
