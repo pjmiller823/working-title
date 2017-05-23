@@ -9,11 +9,11 @@ class WorkingtitleMailer < ApplicationMailer
 
   def submission_to_the_group(submission, group_url)
     @submission = submission
-    @users = @submission.membership.group.users
-    @group = @submission.membership.group
+    @users = @submission.group_users
+    @group = @submission.group
     @url = group_url
 
-    mail subject: "#{@submission.membership.user.name} has submitted a comment to #{@submission.membership.group.name}",
+    mail subject: "#{@submission.user_name} has submitted a comment to #{@submission.group_name}",
       to: "notifications@example.com",
       bcc: @users.map(&:email)
   end

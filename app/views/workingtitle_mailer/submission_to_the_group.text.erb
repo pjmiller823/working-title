@@ -1,3 +1,7 @@
-Just so you know, <%= "#{@submission.membership.user.name}" %> has made a submission to <%= "#{@submission.membership.group.name}" %>!
+Just so you know, <%= @submission.user_name %> has made a submission to <%= @submission.group_name %>!
 
-Be sure to check it out and critique <%="#{@submission.membership.user.name}'s submission at #{@url}"%>
+Be sure to check it out and critique <%= @submission.membership.user.name %>'s submission at <%= @url %>
+
+<% if @submission.due_by %>
+Please have your critique completed by <%= @submission.due_by %>
+<% end %>
