@@ -22,5 +22,9 @@
       h4 #{@user.name} has not made any submissions
     - else
       - @submissions.each_with_index do |submission, index|
-        .list-group.text-left
-          = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments.", membership_submission_path(@membership, submission), class: "list-group-item"
+        - if submission.due_by
+          .list-group.text-left
+            = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments. Due by #{submission.due_by}.", membership_submission_path(@membership, submission), class: "list-group-item"
+        - else
+          .list-group.text-left
+            = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments.", membership_submission_path(@membership, submission), class: "list-group-item"
