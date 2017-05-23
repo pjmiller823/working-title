@@ -15,3 +15,4 @@
 
 //= require 'cable'
 //= require trix
+//= require 'bootstrap'

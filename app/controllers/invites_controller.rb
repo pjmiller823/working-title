@@ -6,7 +6,7 @@ class InvitesController < ApplicationController
     @invite.sender = current_user # set the sender to the current user
 
     if @invite.save
-      WorkingtitleMailer.new_user_invite(@invite, accept_invites_url(token: @invite.token)).deliver # send the invite data to our mailer to deliver the email
+      WorkingtitleMailer.new_user_invite(@invite, accept_invites_url(token: @invite.token)).deliver_later # send the invite data to our mailer to deliver the email
       redirect_to @invite.group, notice: "Sent the email to #{@invite.email}"
     else
       redirect_to @invite.group, notice: "Failed to send email to #{@invite.email}, because: #{@invite.errors.full_messages}"

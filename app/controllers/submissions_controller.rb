@@ -35,6 +35,7 @@ class SubmissionsController < ApplicationController
 
     if @submission.save
       redirect_to author_submissions_group_path(@membership.group, @membership.user), notice: 'Submission was successfully created.'
+      WorkingtitleMailer.submission_to_the_group(@submission, group_url(@submission.membership.group)).deliver
     else
       render :new
     end
