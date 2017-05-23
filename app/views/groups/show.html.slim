@@ -23,7 +23,11 @@
   .jumbotron.group-recent-subs
     h2 Recent Submissions
     - @submissions.each_with_index do |submission, index|
-      .list-group
-        = link_to "Submssion # #{index + 1} , posted #{time_ago_in_words(submission.created_at)} ago. Submitted by #{submission.membership.user.name}", membership_submission_path(submission.membership, submission), class: "list-group-item"
+      - if submission.due_by
+        .list-group
+          = link_to "Submssion # #{index + 1} , posted #{time_ago_in_words(submission.created_at)} ago. Submitted by #{submission.membership.user.name}. Due by #{submission.due_by}.", membership_submission_path(submission.membership, submission), class: "list-group-item"
+      - else
+        .list-group
+          = link_to "Submssion # #{index + 1} , posted #{time_ago_in_words(submission.created_at)} ago. Submitted by #{submission.membership.user.name}.", membership_submission_path(submission.membership, submission), class: "list-group-item"
   .jumbotron.group-forum
     h2 Forum

@@ -11,7 +11,14 @@ dl.dl-horizontal.sub-show
   .well
     dt.title Submission:
     dd = raw(@submission.body)
-
+  - if @submission.due_by
+    .well
+      dt.title Due Date:
+      dd = @submission.due_by
+  -else
+    .well
+      dt.title Due Date:
+      dd No due date.
 h2 Comments:
 - @comments.each do |comment|   
   = render 'comments/comment', comment: comment

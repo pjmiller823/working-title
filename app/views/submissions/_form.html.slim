@@ -20,6 +20,10 @@
       = f.label :body, class: "col-sm-2 control-label"
       .col-sm-10
         = f.trix_editor :body, placeholder: "Put your writing here. You can edit or bold the text if you'd like. Have fun with it:)", class: "trix-form"
-  .form-group
+  .well.sub-form-well
+    .form-group
+      = f.label :due_by, class: "col-sm-2 control-label"
+      .col-sm-3
+        = f.date_field :due_by, class: "form-control"
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-default sub-show-btn"
