@@ -7,11 +7,11 @@ class WorkingtitleMailer < ApplicationMailer
     mail(to: @invite.email, subject: 'You have been invited to Working Title!')
   end
 
-  def submission_to_the_group(submission, url)
+  def submission_to_the_group(submission, group_url)
     @submission = submission
     @users = @submission.membership.group.users
     @group = @submission.membership.group
-    @url = url
+    @url = group_url
 
     mail subject: "#{@submission.membership.user.name} has submitted a comment to #{@submission.membership.group.name}",
       to: "notifications@example.com",
