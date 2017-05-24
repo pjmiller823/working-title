@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
     @authors = @group.users
     @submissions = @group.submissions.order(created_at: :desc)
     @invite = Invite.new
+    @membership = @group.memberships.find_by(user_id: params[:author_id])
   end
 
   def author_submissions

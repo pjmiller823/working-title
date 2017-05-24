@@ -17,9 +17,7 @@
       = form_for @invite do |f| 
         = f.hidden_field :group_id, value: @group.id
         = f.email_field :email, placeholder: "Email", class: "imput-lg" 
-        = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"
-
-    
+        = f.submit 'Invite an Author', class: "btn btn-default btn-md author-invite"    
   .jumbotron.group-recent-subs
     h2 Recent Submissions
     - @submissions.each_with_index do |submission, index|
