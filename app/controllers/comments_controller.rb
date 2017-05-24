@@ -30,6 +30,7 @@ class CommentsController < ApplicationController
     @comment.created_by = current_user
 
     if @comment.save
+      WorkingtitleMailer.comment_on_submisison(@comment, @submission, membership_submission_url(@submission.membership, @submission)).deliver
       redirect_to membership_submission_path(@submission.membership.id, @submission.id), notice: 'Comment was successfully created.'
     else
       render :new

@@ -18,7 +18,11 @@ class WorkingtitleMailer < ApplicationMailer
       bcc: @users.map(&:email)
   end
 
-  def comment_on_submisison(comment)
+  def comment_on_submisison(comment, submission, membership_submission_url)
     @comment = comment
+    @submission = submission
+    @url = membership_submission_url
+
+    mail(to: @submission.user_email, subject: "Someone has commented on you submission!")
   end
 end

@@ -1,0 +1,5 @@
+h4 #{@submission.user_name}, 
+p 
+  | #{@comment.created_by.name} has commented on your submission from #{@submission.created_at}. 
+  = link_to "Check it out", @url
+  | and see what #{@comment.created_by.name} had to say!
