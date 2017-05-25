@@ -2,9 +2,11 @@ container
   .row
     .jumbotron.row.form-jumbotron
       h2.text-center Creating a group:
-      p Congratulations! You are one step closer to hosting your very own writing group on Working Title. A couple of things to know first:
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
+      p Congratulations! You are one step closer to optimizing your writing group! But before you get started, let me tell you how it all works.
+      p First, in order to create a group, just enter the name of your group below. When you do so, your group will be created and you will be brought to that group's page. On that page you will see your name with a picture above it. In order to add the rest of your writing group, enter their emails into the field just below and they'll recieve an email inviting them to the group. 
+      p But now what? Well the author's names are links to their personal page. If you click on someone else's name, you can see their current submission or look through a list of their past submissions. If you visit your page you have the ability to make a submission. The title and body are required. Keep the title short for reference and the rest is up to your group and how you best run things. All submisison for the group will be tracked on the group page, and all submissions you owe critiques for (and have due dates) will post to your home profile.
+      p The rest is up to you! Get out there and do good work!
+
       .col-xs-10
         = form_for @group, url: { action: "create"} do |f| 
           .form-group
