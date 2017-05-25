@@ -25,19 +25,19 @@
         
     .jumbotron.notifications
       span Critiques Due:
-        -if current_user.upcoming_submissions_todo.empty?
-          p You have no critiques due. Go write something!
-        - else
-          - current_user.upcoming_submissions_todo.each do |submission|
-            = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
-              - if submission.title
-                = submission.title
-              |  By 
-              = submission.user_name
-              |  
-              span.small
-                | (
-                = time_ago_in_words(submission.created_at)
-                |  ago)
-              .pull-right
-                |  Due in #{time_ago_in_words(submission.due_by)}.
+      -if current_user.upcoming_submissions_todo.empty?
+        p You have no critiques due. Go write something!
+      - else
+        - current_user.upcoming_submissions_todo.each do |submission|
+          = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
+            - if submission.title
+              = submission.title
+            |  By 
+            = submission.user_name
+            |  
+            span.small
+              | (
+              = time_ago_in_words(submission.created_at)
+              |  ago)
+            .pull-right
+              |  Due in #{time_ago_in_words(submission.due_by)}.
