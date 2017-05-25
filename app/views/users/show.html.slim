@@ -24,7 +24,7 @@
         = link_to "Create Another Group!", new_group_path, method: "get", class: "btn btn-default btn-profile"
         
     .jumbotron.notifications
-      span Critiques Due:
+      span.title Critiques Due:
       -if current_user.upcoming_submissions_todo.empty?
         p You have no critiques due. Go write something!
       - else
