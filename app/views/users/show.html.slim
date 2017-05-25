@@ -37,8 +37,8 @@
               = submission.user_name
               |  
               span.small
-              | (
-              = time_ago_in_words(submission.created_at)
-              |  ago)
-                .pull-right
-                  |  Due in #{time_ago_in_words(submission.due_by)}.
+                | (
+                = time_ago_in_words(submission.created_at)
+                |  ago)
+              .pull-right
+                |  Due in #{time_ago_in_words(submission.due_by)}.
