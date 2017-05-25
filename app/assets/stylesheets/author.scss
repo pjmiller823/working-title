@@ -1,6 +1,14 @@
 .author-container {
   align-items: center;
 
+  img {
+    border: 0.2px solid #BBBBBB;
+  }
+
+  .name-and-picture {
+    color: #BBBBBB;
+  }
+
   .jumbotron {
     background-color: $accent-color;
 
