@@ -1,4 +1,7 @@
 class Submission < ApplicationRecord
+  validates :body, presence: true
+  validates :title, presence: true
+
   belongs_to :membership
   has_many :comments
 

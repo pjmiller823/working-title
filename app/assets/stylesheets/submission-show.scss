@@ -7,6 +7,10 @@
 
   .well {
     background-color: $accent_color;
+
+    dd {
+      margin-bottom: .5em;
+    }
   }
 }
 
