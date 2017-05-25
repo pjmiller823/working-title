@@ -24,7 +24,8 @@
     - else
       - @submissions.each_with_index do |submission, index|
         = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
-          = submission.title
+          - if submission.title
+            = submission.title
           |  By 
           = submission.user_name
           |  
