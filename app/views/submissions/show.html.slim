@@ -6,19 +6,20 @@
   h1 #{@submission.membership.user.name}'s Submission
 dl.dl-horizontal.sub-show
   .well
+    - if @submission.title
+      dt.title Title:
+      dd = @submission.title
+    
     dt.title Intro:
     dd = @submission.intro
-  .well
     dt.title Submission:
     dd = raw(@submission.body)
-  - if @submission.due_by
-    .well
-      dt.title Due Date:
-      dd = @submission.due_by
-  -else
-    .well
-      dt.title Due Date:
-      dd No due date.
+    - if @submission.due_by
+        dt.title Due Date:
+        dd = @submission.due_by
+    -else
+        dt.title Due Date:
+        dd No due date.
 h2 Comments:
 - @comments.each do |comment|   
   = render 'comments/comment', comment: comment

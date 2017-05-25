@@ -1,9 +1,10 @@
-.container.author-container.text-center
-  img src="https://unsplash.it/200/200." class="img-circle"
+.container.author-container
+  .text-center
+    img src="https://unsplash.it/200/200." class="img-circle"
+    
+    h1.author-title.text-center #{@user.name}
   
-  h1.author-title.text-center #{@user.name}
-  
-  = link_to "Back to #{@group.name}", group_path(@group), class: "btn btn-default back-to-group"
+    = link_to "Back to #{@group.name}", group_path(@group), class: "btn btn-default back-to-group"
   
   .jumbotron.author-jumbo
     h2 About the Story
@@ -22,9 +23,15 @@
       h4 #{@user.name} has not made any submissions
     - else
       - @submissions.each_with_index do |submission, index|
-        - if submission.due_by
-          .list-group.text-left
-            = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments. Due by #{submission.due_by}.", membership_submission_path(@membership, submission), class: "list-group-item"
-        - else
-          .list-group.text-left
-            = link_to "Submssion # #{index + 1}, posted #{time_ago_in_words(submission.created_at)} ago. #{submission.comments.count} comments.", membership_submission_path(@membership, submission), class: "list-group-item"
+        = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
+          = submission.title
+          |  By 
+          = submission.user_name
+          |  
+          span.small
+            | (
+            = time_ago_in_words(submission.created_at)
+            |  ago)
+          - if submission.due_by && submission.due_by >= Date.today
+            .pull-right
+              |  Due in #{time_ago_in_words(submission.due_by)}.
