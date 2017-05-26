@@ -8,7 +8,7 @@
   
   .jumbotron.author-jumbo
     h2 About this page
-    p.text-left Here is where you can view all of the submission by the author. Below you can view their most recent post by clicking the "Most Recent Submission button" or you can visit their past submissions by clicking on the title in the list below. If they have listed a due date it will be on the right of the listing.
+    p.text-left Here you can view all of #{@user.name}'s submissions. Below you can view their most recent post by clicking on "Most Recent Submission" or you can view their past submissions by clicking on the title in the list below. If they have listed a due date it will be on the right of the listing.
   - if @most_recent_submission
     .author-btn.text-center
       = link_to "Most Recent Submission", membership_submission_path(@membership, @most_recent_submission), class: "btn btn-default"

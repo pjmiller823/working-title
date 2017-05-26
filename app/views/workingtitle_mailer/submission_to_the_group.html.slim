@@ -1,7 +1,7 @@
-p Just so you know, #{@submission.user_name} has made a submission to #{@submission.group_name}
+p Just so you know, #{@submission.user_name} has made a submission to #{@submission.group_name}.
 p
-  | Be sure to check it out and critique
+  | Be sure to check out and critique
   = link_to "#{@submission.user_name}'s submission", @url
   
 - if @submission.due_by
-  p Please have your critique completed by #{@submission.due_by}
+  p Please complete your critique by #{@submission.due_by}.

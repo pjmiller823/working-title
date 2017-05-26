@@ -21,14 +21,7 @@ html
   body.landing
     .jumbotron.text-center
       h1 Working Title
-      
-      .row.landing-logins-row
-        .col-md-offset-4.col-md-3
-          .col-md-4
-            = link_to "Log In", auth_path(provider: 'google'), class: "btn btn-default btn-landing"
-        .col-md-3
-          .col-md-4
-            = link_to "Sign Up", auth_path(provider: 'google'), class: "btn btn-default btn-landing"
+      h2 = link_to "Sign In With GOOGLE", auth_path(provider: 'google'), class: "sign-in-google"
     .container
       .jumbotron
         h2 What We Offer!

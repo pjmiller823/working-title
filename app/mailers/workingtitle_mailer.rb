@@ -13,7 +13,7 @@ class WorkingtitleMailer < ApplicationMailer
     @group = @submission.group
     @url = group_url
 
-    mail subject: "#{@submission.user_name} has submitted a comment to #{@submission.group_name}",
+    mail subject: "#{@submission.user_name} Has Submitted a Comment to #{@submission.group_name}",
       to: "notifications@example.com",
       bcc: @users.map(&:email)
   end
