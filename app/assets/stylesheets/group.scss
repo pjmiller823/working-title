@@ -1,6 +1,9 @@
 .thumbnail .caption a {
-  background-color: $light-accent;
   text-decoration: none;
+}
+
+.thumbnail {
+  background-color: $accent-color;
 }
 
 .group-container {
@@ -12,7 +15,8 @@
     background-color: $accent-color;
 
     .list-group-item {
-      background-color: $background-color
+      background-color: $background-color;
+      margin: none;
     }
   }
 

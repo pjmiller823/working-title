@@ -22,16 +22,17 @@
       h4 #{@user.name} has not made any submissions
     - else
       - @submissions.each_with_index do |submission, index|
-        = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
-          - if submission.title
-            = submission.title
-          |  By 
-          = submission.user_name
-          |  
-          span.small
-            | (
-            = time_ago_in_words(submission.created_at)
-            |  ago)
-          - if submission.due_by && submission.due_by >= Date.today
-            .pull-right
-              |  Due in #{time_ago_in_words(submission.due_by)}.
+        .list-group
+          = link_to membership_submission_path(submission.membership, submission), class: "list-group-item" do
+            - if submission.title
+              = submission.title
+            |  By 
+            = submission.user_name
+            |  
+            span.small
+              | (
+              = time_ago_in_words(submission.created_at)
+              |  ago)
+            - if submission.due_by && submission.due_by >= Date.today
+              .pull-right
+                |  Due in #{time_ago_in_words(submission.due_by)}.
