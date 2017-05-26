@@ -7,9 +7,8 @@
     = link_to "Back to #{@group.name}", group_path(@group), class: "btn btn-default back-to-group"
   
   .jumbotron.author-jumbo
-    h2 About the Story
-    p.text-left Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
+    h2 About this page
+    p.text-left Here is where you can view all of the submission by the author. Below you can view their most recent post by clicking the "Most Recent Submission button" or you can visit their past submissions by clicking on the title in the list below. If they have listed a due date it will be on the right of the listing.
   - if @most_recent_submission
     .author-btn.text-center
       = link_to "Most Recent Submission", membership_submission_path(@membership, @most_recent_submission), class: "btn btn-default"
