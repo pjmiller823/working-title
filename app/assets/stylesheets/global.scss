@@ -1,5 +1,5 @@
 .landing-navbar {
-  background-image: url(notebook.jpg);
+  background: image-url("notebook.jpg");
   background-size: cover;
 
   a {
@@ -11,12 +11,12 @@ body {
   color: #212121;
   font-family: 'Cutive Mono', monospace;
   background-color: $background-color;
-  background-image: url(cover.jpg);
+  background: image-url("cover.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
   .jumbotron {
-    background-image: url(notebook.jpg);
+    background: image-url("notebook.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
