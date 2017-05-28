@@ -51,29 +51,3 @@ Submission page:
 Submission/edit form:
 
 <img src="https://raw.githubusercontent.com/pjmiller823/working-title/master/app/assets/images/Edit-form.png" width="200">
-
-
-# README in progress.
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
