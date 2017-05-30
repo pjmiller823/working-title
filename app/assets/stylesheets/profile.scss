@@ -10,10 +10,11 @@
   background-color: $accent-color;
 
   .group-list {
+    list-style: none;
+
     a {
       font-size: 150%;
       color: #212121;
-      text-decoration: none;
     }
   }
 }

@@ -21,3 +21,9 @@ body {
     background-repeat: no-repeat;
   }
 }
+
+// Override flexbox on the trix toolbar
+trix-toolbar .button_row {
+  justify-content: flex-start;
+  flex-wrap: wrap !important;
+}

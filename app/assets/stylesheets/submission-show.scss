@@ -13,6 +13,7 @@
     background: image-url("notebook.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    padding-right: 6em;
 
     dd {
       margin-bottom: .5em;
@@ -29,4 +30,12 @@
 
 .comment-well {
   background-color: $background-color;
+}
+
+@media only screen and (max-width: 600px) {
+  .sub-show {
+    .well {
+      padding-right: 0;
+    }
+  }
 }

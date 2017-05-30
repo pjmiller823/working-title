@@ -9,7 +9,7 @@ container
 
       .col-xs-10
         = form_for @group, url: { action: "create"} do |f| 
-          .form-group
-            .col-xs-10
+          .form-group.form-inline
+            .col-xs-12
               = f.text_field :name, placeholder: "Group Name", class: "form-control"
               = f.submit "Create Group", class: "btn btn-default form-btn btn-profile"
