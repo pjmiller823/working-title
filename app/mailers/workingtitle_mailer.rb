@@ -14,8 +14,8 @@ class WorkingtitleMailer < ApplicationMailer
     @url = group_url
 
     mail subject: "#{@submission.user_name} Has Submitted a Comment to #{@submission.group_name}",
-      to: "notifications@example.com",
-      bcc: @users.map(&:email)
+         to: "notifications@example.com",
+         bcc: @users.map(&:email)
   end
 
   def comment_on_submisison(comment, submission, membership_submission_url)

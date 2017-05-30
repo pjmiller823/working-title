@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   root 'session#new'
 
   # session routes
-  get    '/auth/:provider'          => 'omniauth#auth',    as: :auth
-  get    '/auth/:provider/callback' => 'session#create'
-  get    '/auth/failure'            => 'session#failure'
+  get '/auth/:provider'          => 'omniauth#auth', as: :auth
+  get '/auth/:provider/callback' => 'session#create'
+  get '/auth/failure'            => 'session#failure'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
