@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate!
+  before_action :ensure_member!
 
   def new
     @group = Group.new
@@ -36,5 +37,13 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def ensure_member!
+    group = Group.find(params[:id])
+
+    unless group.users.include?(current_user)
+      redirect_to profile_path
+    end
   end
 end
