@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate!
-  before_action :ensure_member!
+  before_action :ensure_member!, except: [:new, :create]
 
   def new
     @group = Group.new
