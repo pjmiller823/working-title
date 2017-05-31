@@ -26,13 +26,13 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          = link_to root_path, class: "navbar-brand" do
+          = link_to profile_path, class: "navbar-brand" do
             | Working Title
         /! Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active
-              = link_to "Home", profile_path
+              = link_to "Profile", profile_path
           ul.nav.navbar-nav.navbar-right
             li
               = link_to "Logout", logout_path
