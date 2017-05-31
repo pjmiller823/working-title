@@ -14,10 +14,23 @@
 .container.group-container
   .row.text-center
     .col-xs-1-12
-      = form_for @invite do |f| 
-        = f.hidden_field :group_id, value: @group.id
-        = f.email_field :email, placeholder: "New invite's Email", class: "imput-lg" 
-        = f.submit 'Invite', class: "btn btn-default btn-md author-invite"    
+      /! Button trigger modal
+      button.btn.btn-default.btn-md.author-invite data-target="#myModal" data-toggle="modal" type="button" 
+        | Invite an Author
+      /! Modal
+      #myModal.modal.fade aria-labelledby="myModalLabel" role="dialog" tabindex="-1" 
+        .modal-dialog role="document" 
+          .modal-content
+            .modal-header
+              button.close aria-label="Close" data-dismiss="modal" type="button" 
+                span aria-hidden="true"  ×
+              h4#myModalLabel.modal-title Modal title
+            .modal-body
+              p This is where you can add another author to your group. Just enter their email in the form below, click invite, and they will recieve an email with a link that will let them join the group.
+              = form_for @invite do |f| 
+                = f.hidden_field :group_id, value: @group.id
+                = f.email_field :email, placeholder: "Email", class: "imput-lg" 
+                = f.submit 'Invite', class: "btn btn-default btn-md author-invite"      
   .jumbotron.group-recent-subs
     h2 Recent Submissions
     - @submissions.each_with_index do |submission, index|
